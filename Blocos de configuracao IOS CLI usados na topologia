@@ -1,0 +1,361 @@
+==========================================================================
+PROJETO PRATICO 8 - REDE CORPORATIVA OMNITECH SOLUCOES
+Blocos de configuracao IOS CLI usados na topologia - registro para auditoria
+Baseado no arquivo "Trabalho Oficial.pkt" (2 Multilayer Switch 3650-24PS,
+3 Switch 2960-24TT, 2 Server-PT, ~30 PC-PT) + ajuste de STP recomendado
+(spanning-tree mode pvst -> rapid-pvst em Switch0, Switch1, MLS0, MLS1)
+==========================================================================
+
+
+--------------------------------------------------------------------------
+DEVICE: Switch0  (2960-24TT, L2, VLAN de acesso 83 - Suporte)
+--------------------------------------------------------------------------
+!
+hostname Switch0
+!
+ip arp inspection vlan 81-83
+!
+ip dhcp snooping vlan 80-83
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+! Portas de acesso Fa0/1 a Fa0/10 - uma estacao de trabalho por porta,
+! VLAN 83, Port Security com limite de 1 MAC e bloqueio automatico,
+! PortFast + BPDU Guard para convergencia imediata sem gerar BPDU
+!
+interface FastEthernet0/1
+ switchport access vlan 83
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation shutdown
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+! (repetir o mesmo bloco para FastEthernet0/2 ate FastEthernet0/10)
+!
+interface GigabitEthernet0/1
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end
+
+
+--------------------------------------------------------------------------
+DEVICE: Switch1  (2960-24TT, L2, VLAN de acesso 82 - Qualidade)
+--------------------------------------------------------------------------
+!
+hostname Switch1
+!
+ip arp inspection vlan 81-83
+!
+ip dhcp snooping vlan 80-83
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport access vlan 82
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation shutdown
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+! (repetir o mesmo bloco para FastEthernet0/2 ate FastEthernet0/10)
+!
+interface GigabitEthernet0/1
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end
+
+
+--------------------------------------------------------------------------
+DEVICE: Switch2  (2960-24TT, L2, VLAN de acesso 81 - Engenharia)
+--------------------------------------------------------------------------
+!
+hostname Switch2
+!
+ip arp inspection vlan 81-83
+!
+ip dhcp snooping vlan 80-83
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport access vlan 81
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation shutdown
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+! (repetir o mesmo bloco para FastEthernet0/2 ate FastEthernet0/10)
+!
+interface GigabitEthernet0/1
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ ip arp inspection trust
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end
+
+
+--------------------------------------------------------------------------
+DEVICE: Multilayer Switch0 / "MLS0"  (3650-24PS, L3 core, HSRP nao usado -
+root bridge de todas as VLANs, relay DHCP ativo)
+--------------------------------------------------------------------------
+!
+hostname MLS0
+!
+ip routing
+!
+ip dhcp excluded-address 10.80.1.1
+ip dhcp excluded-address 10.80.2.1
+ip dhcp excluded-address 10.80.3.1
+!
+ip dhcp pool POOL_ENGENHARIA
+ network 10.80.1.0 255.255.255.0
+ default-router 10.80.1.1
+ip dhcp pool POOL_QUALIDADE
+ network 10.80.2.0 255.255.255.0
+ default-router 10.80.2.1
+ip dhcp pool POOL_SUPORTE
+ network 10.80.3.0 255.255.255.0
+ default-router 10.80.3.1
+!
+ip arp inspection vlan 81-83
+!
+ip dhcp snooping vlan 80-83
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+!
+! Uplinks Gi1/0/1-4: trunk para Switch0 / Switch1 / Switch2 / Server0
+!
+interface GigabitEthernet1/0/1
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/2
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/3
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/4
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan80
+ mac-address 0001.c9dd.0a01
+ ip address 10.80.0.1 255.255.255.0
+!
+interface Vlan81
+ mac-address 0001.c9dd.0a02
+ ip address 10.80.1.1 255.255.255.0
+ ip helper-address 10.80.0.10
+!
+interface Vlan82
+ mac-address 0001.c9dd.0a03
+ ip address 10.80.2.1 255.255.255.0
+ ip helper-address 10.80.0.10
+!
+interface Vlan83
+ mac-address 0001.c9dd.0a04
+ ip address 10.80.3.1 255.255.255.0
+ ip helper-address 10.80.0.10
+!
+ip classless
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+end
+
+
+--------------------------------------------------------------------------
+DEVICE: Multilayer Switch1 / "MLS1"  (3650-24PS, L3 core secundario -
+sem helper-address, so entra em forwarding se o MLS0 falhar)
+--------------------------------------------------------------------------
+!
+hostname MLS1
+!
+ip routing
+!
+ip arp inspection vlan 81-83
+!
+ip dhcp snooping vlan 80-83
+no ip dhcp snooping information option
+ip dhcp snooping
+!
+spanning-tree mode rapid-pvst
+!
+interface GigabitEthernet1/0/1
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/2
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/3
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface GigabitEthernet1/0/4
+ ip dhcp snooping trust
+ switchport mode trunk
+ ip arp inspection trust
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan80
+ mac-address 0050.0f83.dd01
+ ip address 10.80.0.2 255.255.255.0
+!
+interface Vlan81
+ mac-address 0050.0f83.dd02
+ ip address 10.80.1.2 255.255.255.0
+!
+interface Vlan82
+ mac-address 0050.0f83.dd03
+ ip address 10.80.2.2 255.255.255.0
+!
+interface Vlan83
+ mac-address 0050.0f83.dd04
+ ip address 10.80.3.2 255.255.255.0
+!
+ip classless
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+end
+
+
+--------------------------------------------------------------------------
+DEVICE: Server0  (Server-PT - DHCP / Repositorio Interno)
+--------------------------------------------------------------------------
+# IP Address : 10.80.0.10
+# Subnet Mask: 255.255.255.0
+# Default GW : 10.80.0.1
+# DHCP Pool  : serverPool 10.80.0.0 255.255.255.0 0.0.0.0 10.80.0.0 512
+# DHCP Pool  : VLAN83   10.80.3.0 255.255.255.0 10.80.3.1 10.80.3.10 50
+# DHCP Pool  : VLAN82   10.80.2.0 255.255.255.0 10.80.2.1 10.80.2.10 50
+# DHCP Pool  : VLAN81   10.80.1.0 255.255.255.0 10.80.1.1 10.80.1.10 50
+
+
+--------------------------------------------------------------------------
+DEVICE: Server1  (Server-PT - Autenticacao / DNS)
+--------------------------------------------------------------------------
+# IP Address : 10.80.0.20
+# Subnet Mask: 255.255.255.0
+# Default GW : 10.80.0.1
+# DHCP Pool  : serverPool 10.80.0.0 255.255.255.0 0.0.0.0 10.80.0.0 512
+
+
+==========================================================================
+NOTAS DE AUDITORIA (pontos observados na analise, para constar no relatorio)
+==========================================================================
+1. STP: Switch0, Switch1, MLS0 e MLS1 estavam originalmente em
+   "spanning-tree mode pvst" (classico). Foi recomendada e aplicada a
+   mudanca para "spanning-tree mode rapid-pvst" nesses 4 dispositivos
+   para atender ao requisito de convergencia rapida do projeto
+   (Switch2 ja estava em rapid-pvst desde o arquivo original).
+
+2. Redundancia de gateway: MLS0 e MLS1 usam IPs fisicos fixos por VLAN
+   (.1 e .2), sem HSRP/VRRP. Nao ha IP virtual de gateway compartilhado.
+   A rede funciona hoje porque o STP elege o MLS0 como root bridge em
+   todas as VLANs (Bridge ID menor, definido pelo mac-address fixo
+   0001.c9dd.0a0x), forcando todo o trafego a convergir por ele - que e
+   o unico com "ip helper-address" configurado. Isso e deterministico
+   (nao e coincidencia), mas nao e redundancia real de gateway: se o
+   MLS0 sair do ar, os hosts perdem o gateway ate a arvore reconvergir
+   pelo MLS1 - que nao tem os helper-address configurados.
+
+3. DHCP: o MLS0 tem pools DHCP locais (POOL_ENGENHARIA, POOL_QUALIDADE,
+   POOL_SUPORTE) para as mesmas sub-redes que o Server0 tambem serve via
+   relay. Isso e uma duplicidade de fonte DHCP para o mesmo escopo -
+   nao chegou a causar problema porque o MLS0 responde localmente antes
+   do helper-address ser necessario, mas e uma inconsistencia de design
+   a considerar caso o projeto evolua.
+
+Gerado por NetPilot a partir da analise da topologia enviada pelo usuario.
