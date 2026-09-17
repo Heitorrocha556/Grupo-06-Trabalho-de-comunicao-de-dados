@@ -1,26 +1,19 @@
-<div align="center" style="background-color:#000; color:#fff; font-family: Arial, sans-serif; padding: 32px 20px 40px; border-radius: 12px;">
-  <p style="font-size: 30px; font-weight: 700; margin: 0 0 18px; line-height: 1.4;">Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC</p>
-  <p style="font-size: 28px; font-weight: 700; margin: 0 0 30px; line-height: 1.3;">CURSO DE ENGENHARIA DE SOFTWARE</p>
-
-  <div style="margin: 18px 0 40px;">
-    <p style="font-size: 28px; margin: 8px 0;">Alexsander Sávio Santana da Silva</p>
-    <p style="font-size: 28px; margin: 8px 0;">Gabriel Santos Araújo</p>
-    <p style="font-size: 28px; margin: 8px 0;">Geovana Rosal Torres</p>
-    <p style="font-size: 28px; margin: 8px 0;">Gustavo Viana Pereira</p>
-    <p style="font-size: 28px; margin: 8px 0;">Heitor Rocha Moreira</p>
-    <p style="font-size: 28px; margin: 8px 0;">Kaio Rauan da Silva Matias</p>
-    <p style="font-size: 28px; margin: 8px 0;">Lara Isabela Lima Serra</p>
-    <p style="font-size: 28px; margin: 8px 0;">Letícia Liz Benigno da Silva</p>
-    <p style="font-size: 28px; margin: 8px 0;">Pedro Henrique Eduardo Ribeiro Costa</p>
-  </div>
-
-  <p style="font-size: 40px; font-weight: 700; margin: 30px 0 40px; line-height: 1.2;">SISTEMA GERENCIADOR DE ORÇAMENTO PESSOAL</p>
-
-  <div style="margin-top: 30px;">
-    <p style="font-size: 26px; margin: 10px 0;">Professor: Hudson Neves e Silva</p>
-    <p style="font-size: 26px; margin: 18px 0 0;">Gama - DF</p>
-    <p style="font-size: 24px; margin: 8px 0 0;">2026</p>
-  </div>
+<div align="center">
+  <strong>Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC</strong><br>
+  <strong>CURSO DE ENGENHARIA DE SOFTWARE</strong><br><br><br>
+  <strong>Alexsander Sávio Santana da Silva</strong><br>
+  <strong>Gabriel Santos Araújo</strong><br>
+  <strong>Geovana Rosal Torres</strong><br>
+  <strong>Gustavo Viana Pereira</strong><br>
+  <strong>Heitor Rocha Moreira</strong><br>
+  <strong>Kaio Rauan da Silva Matias</strong><br>
+  <strong>Lara Isabela Lima Serra</strong><br>
+  <strong>Letícia Liz Benigno da Silva</strong><br>
+  <strong>Pedro Henrique Eduardo Ribeiro Costa</strong><br><br><br>
+  <strong>COMUNICAÇÃO DE DADOS</strong><br><br><br>
+  <strong>Professor: Hudson Neves e Silva<br><br><br>
+  Gama - DF<br>
+  2026
 </div>
 
 ## Sobre o projeto
