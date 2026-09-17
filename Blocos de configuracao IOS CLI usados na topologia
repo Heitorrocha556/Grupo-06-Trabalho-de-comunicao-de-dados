@@ -357,5 +357,3 @@ NOTAS DE AUDITORIA (pontos observados na analise, para constar no relatorio)
    nao chegou a causar problema porque o MLS0 responde localmente antes
    do helper-address ser necessario, mas e uma inconsistencia de design
    a considerar caso o projeto evolua.
-
-Gerado por NetPilot a partir da analise da topologia enviada pelo usuario.
