@@ -1,12 +1,34 @@
 # Projeto Prático 8 — Rede Corporativa com Rapid PVST+ e DAI
 
+## Informações acadêmicas
+
+Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC
+CURSO DE ENGENHARIA DE SOFTWARE
+
+Alexsander Sávio Santana da Silva
+Gabriel Santos Araújo
+Geovana Rosal Torres
+Gustavo Viana Pereira
+Heitor Rocha Moreira
+Kaio Rauan da Silva Matias
+Lara Isabela Lima Serra
+Letícia Liz Benigno da Silva
+Pedro Henrique Eduardo Ribeiro Costa
+
+SISTEMA GERENCIADOR DE ORÇAMENTO PESSOAL
+
+Professor: Hudson Neves e Silva
+
+Gama - DF
+2026
+
 ## Sobre o projeto
 
-Este projeto foi desenvolvido no Cisco Packet Tracer como parte da disciplina de Redes de Computadores, com foco na criação de uma infraestrutura local corporativa resiliente, redundante e segura. O objetivo principal foi implementar uma LAN com redundância de camada 2, alta disponibilidade e mitigação de ataques de falsificação ARP por meio do Dynamic ARP Inspection (DAI).
+Este projeto foi desenvolvido no Cisco Packet Tracer como parte da disciplina de Redes de Computadores, com foco na criação de uma infraestrutura local corporativa resiliente, redundante e segura. O[...]
 
-A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da configuração de mecanismos de proteção e convergência.
+A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da config[...]
 
-O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e as configurações implementadas.
+O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e a[...]
 
 ## Objetivos
 
@@ -177,7 +199,7 @@ A estrutura lógica da rede foi configurada com base em:
 
 ## Conclusão
 
-O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinação de Rapid PVST+, DHCP Snooping, DAI e Port Security cria uma infraestrutura mais resiliente e segura, adequada ao cenário de uma empresa com múltiplos setores e requisitos de disponibilidade.
+O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinaçã...
 
 ---
 
