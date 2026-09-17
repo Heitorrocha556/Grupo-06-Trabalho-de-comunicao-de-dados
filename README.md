@@ -2,33 +2,35 @@
 
 ## Informações acadêmicas
 
-Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC
-CURSO DE ENGENHARIA DE SOFTWARE
+- Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC
+- Curso: Engenharia de Software
+- Professor: Hudson Neves e Silva
+- Local: Gama - DF
+- Ano: 2026
 
-Alexsander Sávio Santana da Silva
-Gabriel Santos Araújo
-Geovana Rosal Torres
-Gustavo Viana Pereira
-Heitor Rocha Moreira
-Kaio Rauan da Silva Matias
-Lara Isabela Lima Serra
-Letícia Liz Benigno da Silva
-Pedro Henrique Eduardo Ribeiro Costa
+### Integrantes
 
-SISTEMA GERENCIADOR DE ORÇAMENTO PESSOAL
+- Alexsander Sávio Santana da Silva
+- Gabriel Santos Araújo
+- Geovana Rosal Torres
+- Gustavo Viana Pereira
+- Heitor Rocha Moreira
+- Kaio Rauan da Silva Matias
+- Lara Isabela Lima Serra
+- Letícia Liz Benigno da Silva
+- Pedro Henrique Eduardo Ribeiro Costa
 
-Professor: Hudson Neves e Silva
+### Projeto
 
-Gama - DF
-2026
+Sistema Gerenciador de Orçamento Pessoal
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido no Cisco Packet Tracer como parte da disciplina de Redes de Computadores, com foco na criação de uma infraestrutura local corporativa resiliente, redundante e segura. O[...]
+Este projeto foi desenvolvido no Cisco Packet Tracer como parte da disciplina de Redes de Computadores, com foco na criação de uma infraestrutura local corporativa resiliente, redundante e segura.
 
-A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da config[...]
+A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da configuração de segurança de rede para proteção da infraestrutura.
 
-O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e a[...]
+O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e as configurações aplicadas.
 
 ## Objetivos
 
@@ -199,7 +201,7 @@ A estrutura lógica da rede foi configurada com base em:
 
 ## Conclusão
 
-O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinaçã...
+O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinação de Rapid PVST+, DHCP Snooping, DAI e Port Security foi aplicada para garantir uma infraestrutura segura, estável e funcional em um ambiente corporativo simulado.
 
 ---
 
