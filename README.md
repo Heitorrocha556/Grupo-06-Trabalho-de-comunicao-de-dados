@@ -1,36 +1,35 @@
-# Projeto Prático 8 — Rede Corporativa com Rapid PVST+ e DAI
+<div align="center" style="background-color:#000; color:#fff; font-family: Arial, sans-serif; padding: 32px 20px 40px; border-radius: 12px;">
+  <p style="font-size: 30px; font-weight: 700; margin: 0 0 18px; line-height: 1.4;">Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC</p>
+  <p style="font-size: 28px; font-weight: 700; margin: 0 0 30px; line-height: 1.3;">CURSO DE ENGENHARIA DE SOFTWARE</p>
 
-## Informações acadêmicas
+  <div style="margin: 18px 0 40px;">
+    <p style="font-size: 28px; margin: 8px 0;">Alexsander Sávio Santana da Silva</p>
+    <p style="font-size: 28px; margin: 8px 0;">Gabriel Santos Araújo</p>
+    <p style="font-size: 28px; margin: 8px 0;">Geovana Rosal Torres</p>
+    <p style="font-size: 28px; margin: 8px 0;">Gustavo Viana Pereira</p>
+    <p style="font-size: 28px; margin: 8px 0;">Heitor Rocha Moreira</p>
+    <p style="font-size: 28px; margin: 8px 0;">Kaio Rauan da Silva Matias</p>
+    <p style="font-size: 28px; margin: 8px 0;">Lara Isabela Lima Serra</p>
+    <p style="font-size: 28px; margin: 8px 0;">Letícia Liz Benigno da Silva</p>
+    <p style="font-size: 28px; margin: 8px 0;">Pedro Henrique Eduardo Ribeiro Costa</p>
+  </div>
 
-- Centro Universitário do Planalto Central Apparecido dos Santos - UNICEPLAC
-- Curso: Engenharia de Software
-- Professor: Hudson Neves e Silva
-- Local: Gama - DF
-- Ano: 2026
+  <p style="font-size: 40px; font-weight: 700; margin: 30px 0 40px; line-height: 1.2;">SISTEMA GERENCIADOR DE ORÇAMENTO PESSOAL</p>
 
-### Integrantes
-
-- Alexsander Sávio Santana da Silva
-- Gabriel Santos Araújo
-- Geovana Rosal Torres
-- Gustavo Viana Pereira
-- Heitor Rocha Moreira
-- Kaio Rauan da Silva Matias
-- Lara Isabela Lima Serra
-- Letícia Liz Benigno da Silva
-- Pedro Henrique Eduardo Ribeiro Costa
-
-### Projeto
-
-Sistema Gerenciador de Orçamento Pessoal
+  <div style="margin-top: 30px;">
+    <p style="font-size: 26px; margin: 10px 0;">Professor: Hudson Neves e Silva</p>
+    <p style="font-size: 26px; margin: 18px 0 0;">Gama - DF</p>
+    <p style="font-size: 24px; margin: 8px 0 0;">2026</p>
+  </div>
+</div>
 
 ## Sobre o projeto
 
 Este projeto foi desenvolvido no Cisco Packet Tracer como parte da disciplina de Redes de Computadores, com foco na criação de uma infraestrutura local corporativa resiliente, redundante e segura.
 
-A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da configuração de segurança de rede para proteção da infraestrutura.
+A simulação foi estruturada em conformidade com o enunciado do projeto, incluindo múltiplas VLANs, switches multicamada, switches de acesso, servidores locais e computadores finais, além da configuração de redundância, roteamento inter-VLAN e políticas de segurança.
 
-O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e as configurações aplicadas.
+O arquivo do projeto está disponível em [`Trabalho 01.pkt`](./Trabalho%2001.pkt). Esse arquivo deve ser aberto no Cisco Packet Tracer para visualizar e interagir com a topologia, os dispositivos e as configurações implementadas.
 
 ## Objetivos
 
@@ -201,7 +200,7 @@ A estrutura lógica da rede foi configurada com base em:
 
 ## Conclusão
 
-O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinação de Rapid PVST+, DHCP Snooping, DAI e Port Security foi aplicada para garantir uma infraestrutura segura, estável e funcional em um ambiente corporativo simulado.
+O Projeto Prático 8 foi implementado para demonstrar os conceitos de redes corporativas modernas, enfatizando redundância, convergência rápida e proteção contra ataques de camada 2. A combinação de Rapid PVST+, DAI e Port Security evidencia a aplicação prática de medidas de segurança e resiliência em ambientes corporativos.
 
 ---
 
